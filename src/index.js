@@ -14,7 +14,6 @@ class Profil extends React.Component{
 
 	constructor(props){
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
 		this.state={
 			pageJ:{
 				id:1,
@@ -51,7 +50,7 @@ class Profil extends React.Component{
 			pageactuel:""
 
 		};
-
+		this.handleClick = this.handleClick.bind(this);
 		this.state.pageactuel=this.state.pageJ;
 	}
 
@@ -78,9 +77,9 @@ class Profil extends React.Component{
 
 				<div className="3_btn">
 					<p className="fb">Facebook</p>
-					<button className="jeanne" id={this.state.pageJ.id} onClick={this.handleClick("1")}> Jeanne </button>
-					<button className="Martine" id={this.state.pageM.id} onClick={this.handleClick("2")}> Martine </button>
-					<button className="Claude" id={this.state.pageC.id} onClick={this.handleClick("3")}> Claude </button>
+					<button className="jeanne" onClick={this.handleClick.bind("1")}> Jeanne </button>
+					<button className="Martine" onClick={this.handleClick.bind("2")}> Martine </button>
+					<button className="Claude" onClick={this.handleClick.bind("3")}> Claude </button>
 				</div>
 		
 				<img src="jeanne.jpg" alt="Jeanne"/>
